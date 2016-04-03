@@ -3,6 +3,7 @@
 const jwt = require('jsonwebtoken');
 const merge = require('lodash.merge');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 module.exports = function(app, config) {
 
@@ -15,6 +16,8 @@ module.exports = function(app, config) {
   };
   config = merge(defaults, config);
 
+  // Require same origin requests for the SSR site.
+  app.use(cors({ origin: false }));
   app.use(cookieParser());
 
   /**
