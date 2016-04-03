@@ -32,7 +32,8 @@ module.exports = function(app, config) {
             err
           });
         }
-        config.cookie.expires = decoded.exp;
+        config.cookie.expires = new Date(decoded.exp * 1000);
+        delete config.cookie.maxAge;
         res.cookie(config.name, token, config.cookie);
         return res.status(200).send({
           message: 'success'
