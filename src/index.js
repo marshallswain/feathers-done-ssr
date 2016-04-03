@@ -12,12 +12,16 @@ module.exports = function(app, config) {
     name: 'ssr-cookie',
     cookie: {
       httpOnly: true
-    },
+    }
   };
   config = merge(defaults, config);
 
-  // Require same origin requests for the SSR site.
-  app.use(cors({ origin: false }));
+  // Remove the CORS headers for SSR requests. Require same-origin.
+  app.use(function(req, res, next){
+    delete res._headers['access-control-allow-origin'];
+    delete res._headerNames['access-control-allow-origin'];
+    next();
+  });
   app.use(cookieParser());
 
   /**
