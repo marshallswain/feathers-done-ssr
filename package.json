@@ -1,7 +1,7 @@
 {
   "name": "feathers-done-ssr",
   "description": "Use DoneJS Server-Side Rendering with JWT tokens.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/feathersjs/feathers-done-ssr",
   "main": "lib/",
   "keywords": [
