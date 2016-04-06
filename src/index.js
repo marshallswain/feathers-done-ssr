@@ -56,7 +56,7 @@ module.exports = function(app, config) {
 
   /**
    * If an `ssr-cookie` (or config.name cookie) is received, take the token and
-   * set it up in the Authoriation header.
+   * set it up in the Authorization header.
    */
   return function(req, res, next) {
     let token = req.cookies[config.name];
