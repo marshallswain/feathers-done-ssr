@@ -12,6 +12,11 @@
 
 ## Changelog
 
+__0.1.0__
+
+- SSR-Cookie middleware is moved into its own module and no longer included by default.
+- Default cookie name is now `feathers-jwt` to match FeathersJS default.
+
 __0.0.1__
 
 - Initial release
